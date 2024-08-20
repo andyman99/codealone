@@ -1,8 +1,13 @@
+#root{
+    color: white;
+}
 header{
-    background-color: cyan;
+    background-color: rgba(0, 255, 255, 0.306);
 }footer{
-    background-color: lightblue;
+    background-color: rgba(173, 216, 230, 0.356);
 }
 body{
     background-image: url(assets/img/bybanen.jpg);
+    background-size: 100vw;
+    background-repeat: no-repeat;
 }
