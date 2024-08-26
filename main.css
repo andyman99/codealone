@@ -1,10 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+}
 #root{
     color: white;
 }
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Courier New', Courier, monospace;
+}
+p,a{
+    font-size: large;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 header{
-    background-color: rgba(0, 255, 255, 0.306);
-}footer{
+    background-color: rgba(0, 255, 255, 0.806);
+    min-height: 10rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+header div{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    flex-grow: 1;
+}
+nav ul{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style: none;
+    flex-grow: 2;
+}
+nav li{
+    margin-inline: 2rem;
+}
+nav a{
+    color: black;
+}
+footer{
     background-color: rgba(173, 216, 230, 0.356);
+    min-height: 15rem;
 }
 body{
     background-image: url(assets/img/bybanen.jpg);
