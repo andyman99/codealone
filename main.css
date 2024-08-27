@@ -59,3 +59,16 @@ body{
     background-size: 100vw;
     background-repeat: no-repeat;
 }
+/*Backgrounds and blocks that can be given in HTML*/
+    /*Elements*/
+    .index-bg{
+        background-image: url("assets/img/bybanen.jpg");
+    }
+
+    /*Sectioning*/
+    .main-container{
+        display: flex;
+        margin-inline: 3rem;
+        padding: 1rem;
+        background-color: white;
+    }
