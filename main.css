@@ -17,7 +17,7 @@ body{
     min-height: 100vh;
 }
 header{
-    background-color: rgba(0, 255, 255, 0.806);
+    background-color: rgba(255, 255, 255, 0.806);
     min-height: 10rem;
     display: flex;
     flex-direction: row;
@@ -55,7 +55,7 @@ footer{
     width: 100%;
 }
 body{
-    background-image: url(assets/img/bybanen.jpg);
+    background-color: darkgray;
     background-size: 100vw;
     background-repeat: no-repeat;
 }
