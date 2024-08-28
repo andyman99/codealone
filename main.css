@@ -1,9 +1,11 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
-#root{
-    color: white;
+:root{
+    --header-height:10rem;
+    --footer-height:15rem;
 }
 h1,h2,h3,h4,h5,h6{
     font-family: 'Courier New', Courier, monospace;
@@ -15,10 +17,15 @@ p,a{
 body{
     position: relative;
     min-height: 100vh;
+    background-color: darkgray;
+    background-size: 100vw;
+    background-repeat: no-repeat;
 }
+
+
 header{
     background-color: rgba(255, 255, 255, 0.806);
-    min-height: 10rem;
+    min-height: var(--header-height);
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -44,31 +51,60 @@ nav li{
 nav a{
     color: black;
 }
+
+
 main{
-    padding-bottom: 15rem;
+    /*Cooperates with footer*/
+    padding-bottom: var(--footer-height);
+    min-height: calc(100vh - var(--footer-height) - var(--header-height));
 }
+
+
+/*Table design for prices*/
+    table{
+        border: 1px solid;
+        width: 70%;
+        margin-inline: auto;
+        margin-block: 1rem;
+    }
+    table, th, td{
+        border: 1px solid;
+        border-collapse: collapse;
+    }
+    th{
+        height: 2rem;
+    }
+    td::after{
+        content: 'kr';
+    }
+
+
 footer{
     background-color: rgba(173, 216, 230, 0.356);
-    height: 15rem;
+    height: var(--footer-height);
     position:absolute;
     bottom: 0;
     width: 100%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-body{
-    background-color: darkgray;
-    background-size: 100vw;
-    background-repeat: no-repeat;
+footer *{
+    margin-block: .5rem;
 }
+
 /*Backgrounds and blocks that can be given in HTML*/
     /*Elements*/
     .index-bg{
+        /*Fix auto sizing*/
         background-image: url("assets/img/bybanen.jpg");
     }
 
     /*Sectioning*/
     .main-container{
-        display: flex;
         margin-inline: 3rem;
-        padding: 1rem;
+        padding:1rem;
         background-color: white;
     }
