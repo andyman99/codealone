@@ -18,8 +18,6 @@ body{
     position: relative;
     min-height: 100vh;
     background-color: darkgray;
-    background-size: 100vw;
-    background-repeat: no-repeat;
 }
 
 
@@ -100,6 +98,8 @@ footer *{
     .index-bg{
         /*Fix auto sizing*/
         background-image: url("assets/img/bybanen.jpg");
+        background-size: cover;
+        background-position: center;
     }
 
     /*Sectioning*/
@@ -107,4 +107,19 @@ footer *{
         margin-inline: 3rem;
         padding:1rem;
         background-color: white;
+    }
+    /*Homepage box*/
+        /*Get Ai to look into fixing footer and main intersecting*/
+    .center-box-container{
+        display: flex;
+        background-color: rgba(240, 248, 255, 0.635);
+        justify-content: center;
+        align-content: center;
+        position: relative;
+    }
+    .center-box{
+        min-width: 40%;
+        background-color: darkgrey;
+        color: whitesmoke;
+        padding: 10%;
     }
