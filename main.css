@@ -6,6 +6,7 @@
 :root{
     --header-height:10rem;
     --footer-height:15rem;
+    --main-height: calc(100vh - var(--footer-height) - var(--header-height));
 }
 h1,h2,h3,h4,h5,h6{
     font-family: 'Courier New', Courier, monospace;
@@ -54,7 +55,7 @@ nav a{
 main{
     /*Cooperates with footer*/
     padding-bottom: var(--footer-height);
-    min-height: calc(100vh - var(--footer-height) - var(--header-height));
+    min-height: var(--main-height);
 }
 
 
@@ -88,9 +89,7 @@ footer{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-footer *{
-    margin-block: .5rem;
+    gap: 1rem;
 }
 
 /*Backgrounds and blocks that can be given in HTML*/
@@ -112,14 +111,22 @@ footer *{
         /*Get Ai to look into fixing footer and main intersecting*/
     .center-box-container{
         display: flex;
-        background-color: rgba(240, 248, 255, 0.635);
+        flex-direction: column;
+        align-items: center;
+        /*Temporary*/
+        background-color: rgba(42, 117, 182, 0.635);
         justify-content: center;
         align-content: center;
-        position: relative;
+        height: 100%;
     }
     .center-box{
         min-width: 40%;
         background-color: darkgrey;
         color: whitesmoke;
-        padding: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 3rem;
     }
