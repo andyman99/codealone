@@ -19,6 +19,7 @@ body{
     position: relative;
     min-height: 100vh;
     background-color: darkgray;
+    padding-bottom: var(--footer-height);
 }
 
 
@@ -54,7 +55,6 @@ nav a{
 
 main{
     /*Cooperates with footer*/
-    padding-bottom: var(--footer-height);
     min-height: var(--main-height);
 }
 
@@ -115,9 +115,6 @@ footer{
         align-items: center;
         /*Temporary*/
         background-color: rgba(42, 117, 182, 0.635);
-        justify-content: center;
-        align-content: center;
-        height: 100%;
     }
     .center-box{
         min-width: 40%;
