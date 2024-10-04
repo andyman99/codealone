@@ -1,6 +1,61 @@
+/* Old code. New developed from ChatGPT used instead
 .container{
     display: flex;
     margin-inline: 15vw;
     padding: 1rem;
     background-color: rgba(255, 255, 255, 0.836);
+}
+*/
+
+/* Main gallery container */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem; /* Spacing between thumbnails */
+    margin: 2rem auto;
+}
+
+/* Style for images to maintain 1x1 aspect ratio */
+.gallery img {
+    width: 200px; /* Set a width for the thumbnail */
+    aspect-ratio: 1/1; /* Force the image to be a square */
+    object-fit: cover; /* Ensure the image covers the square without stretching */
+    cursor: pointer; /* Change cursor to indicate it's clickable */
+    transition: transform 0.2s ease; /* Optional: Add a slight hover effect */
+}
+
+.gallery img:hover {
+    transform: scale(1.05); /* Slightly enlarge image on hover */
+}
+
+/* Modal container - hidden by default */
+.modal {
+    display: none; /* Hidden initially */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it's above other content */
+}
+
+/* Full-size image in the modal */
+.modal img {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+/* Close button for the modal */
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    font-family: sans-serif;
 }
