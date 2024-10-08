@@ -32,6 +32,13 @@ header div {
     align-items: center;
 }
 
+/* Style for the current page in the navbar */
+#navbar a#current-page {
+    text-decoration: underline; /* Underline the current page */
+    font-weight: bold;          /* Optionally, make it bold */
+}
+
+
 /* Hamburger menu */
 .hamburger {
     display: none;
