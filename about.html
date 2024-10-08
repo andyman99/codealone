@@ -4,26 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css">
-    <title>Index</title>
+    <title>Om</title>
 </head>
 <body>
-    <header>
-        <!--This should be replaced by an inclouded file to be able to update one file instead of changing all headers individually-->
-        <div>
-            <a href="#"><img src="https://www.svgrepo.com/show/508699/landscape-placeholder.svg" width="50px"></a>
-            <h1>Dette er headeren</h1>
-        </div>
-        <nav>
-            <ul>
-                <!--id="current-page" meant to be used to highlight which page youre on. This might be removed with help from AI and JS in later development-->
-                <li><a href="index.html">Hjem</a></li>
-                <li><a href="gallery.html">Galleri</a></li>
-                <li><a href="prices.html">Priser</a></li>
-                <li><a href="about.html" id="current-page">Om</a></li>
-                <li><a href="contact.html">Kontakt</a></li>
-            </ul>
-        </nav>
-    </header>
+    <header id="header"></header>
+
+
     <main class="main-container">
         <h2>Andreas Heier</h2>
         <p>
@@ -34,14 +20,10 @@
         </p>
         <p>Med lidenskap for å fange augneblikk, er eg på leit etter mennesker og stader i bybildet som skiller seg ut og kan hjelpe andre med å sjå alt det flotte som fins rett framfor oss når vi går rundt i ein travel kvardag. Eg ønsker å fange det få andre legg merke til, slik at fleire kan nyte dei flotte omgivelsane som ofte finst rundt oss.</p>
     </main>
-    <footer>
-        <!--This should auto update with latest imports from gallery, and not required going into code to change every time-->
-        <h2>Andreas Heier</h2>
-        <i>Gatefotograf</i>
-        <a href="tel: +4746851716">+47 46851716</a>
-        <p>
-            E-post:<a href="mailto: andreas.heier.1999@gmail.com">andreas.heier.1999@gmail.com</a>
-        </p>
-    </footer>
+
+    <footer id="footer"></footer>
+
+    <!-- JavaScript for toggling the hamburger menu -->
+    <script src="main.js"></script>
 </body>
 </html>

@@ -202,7 +202,8 @@ footer {
 /* Main section styling */
 .main-container {
     max-width: 800px;
-    margin: 1rem auto;
+    margin-inline: auto; /* Ensure at least 1rem, but prefer auto for wider screens */
+    margin-block: 1rem; /* Keep a consistent 1rem margin at the top and bottom */
     padding: 2rem;
     background-color: #f9f9f9; /* Light background for the content */
     border-radius: 8px; /* Soft rounded corners */
