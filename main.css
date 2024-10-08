@@ -1,129 +1,295 @@
-*{
+/* Global styles */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-:root{
-    --header-height:10rem;
-    --footer-height:15rem;
-    --main-height: calc(100vh - var(--footer-height) - var(--header-height));
-}
-h1,h2,h3,h4,h5,h6{
-    font-family: 'Courier New', Courier, monospace;
-}
-p,a{
-    font-size: large;
+
+/* Body and Layout */
+body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-body{
-    position: relative;
-    min-height: 100vh;
     background-color: darkgray;
-    padding-bottom: var(--footer-height);
-}
-
-
-header{
-    background-color: rgba(255, 255, 255, 0.806);
-    min-height: var(--header-height);
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-}
-header div{
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-    flex-grow: 1;
-}
-nav ul{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    list-style: none;
-    flex-grow: 2;
-}
-nav li{
-    margin-inline: 2rem;
-}
-nav a{
-    color: black;
-}
-
-
-main{
-    /*Cooperates with footer*/
-    min-height: var(--main-height);
-}
-
-
-/*Table design for prices*/
-    table{
-        border: 1px solid;
-        width: 70%;
-        margin-inline: auto;
-        margin-block: 1rem;
-    }
-    table, th, td{
-        border: 1px solid;
-        border-collapse: collapse;
-    }
-    th{
-        height: 2rem;
-    }
-    td::after{
-        content: 'kr';
-    }
-
-
-footer{
-    background-color: rgba(173, 216, 230, 0.356);
-    height: var(--footer-height);
-    position:absolute;
-    bottom: 0;
-    width: 100%;
-    padding: 1rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
+    min-height: 100vh; /* Ensures the page always fills the viewport height */
 }
 
-/*Backgrounds and blocks that can be given in HTML*/
-    /*Elements*/
-    .index-bg{
-        /*Fix auto sizing*/
-        background-image: url("assets/img/bybanen.jpg");
-        background-size: cover;
-        background-position: center;
+/* Header styles */
+header {
+    background-color: rgba(255, 255, 255, 0.806);
+    min-height: 10rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    flex-wrap: wrap;
+}
+
+/* Left section (logo and title) */
+header div {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+/* Hamburger menu */
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* Navigation menu */
+nav ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    /* Stack header contents vertically on small screens */
+    header {
+        flex-direction: column;
+        align-items: flex-start;
     }
 
-    /*Sectioning*/
-    .main-container{
-        margin-inline: 3rem;
-        padding:1rem;
-        background-color: white;
+    nav {
+        display: none; /* Hide the navigation by default */
+        position: absolute;
+        top: 10rem;
+        left: 0;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.95);
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.3s ease-out;
     }
-    /*Homepage box*/
-        /*Get Ai to look into fixing footer and main intersecting*/
-    .center-box-container{
+
+    nav.active {
+        max-height: 300px;
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        /*Temporary*/
-        background-color: rgba(42, 117, 182, 0.635);
-    }
-    .center-box{
-        min-width: 40%;
-        background-color: darkgrey;
-        color: whitesmoke;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         flex-direction: column;
         gap: 1rem;
-        padding: 3rem;
     }
+
+    nav ul {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
+
+/* Main content */
+main {
+    flex-grow: 1; /* Fills the remaining space between header and footer */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    min-height: calc(100vh - 10rem - 15rem); /* Adjusts based on header and footer height */
+}
+
+/* Footer styling */
+footer {
+    background-color: rgba(173, 216, 230, 0.356);
+    height: 15rem;
+    padding: 1rem;
+    text-align: center;
+    position: relative;
+    width: 100%;
+
+    /* Centering content */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically */
+    flex-direction: column;  /* Stack content vertically */
+}
+
+/* Gallery styles */
+.gallery-container {
+    width: 70%;
+    margin-inline: auto;
+}
+
+/* Main gallery container */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem; /* Spacing between thumbnails */
+    margin: 2rem auto;
+}
+
+/* Style for images to maintain 1x1 aspect ratio */
+.gallery img {
+    width: 20rem; /* Set a width for the thumbnail */
+    aspect-ratio: 1/1; /* Force the image to be a square */
+    object-fit: cover; /* Ensure the image covers the square without stretching */
+    cursor: pointer; /* Change cursor to indicate it's clickable */
+    transition: transform 0.2s ease; /* Optional: Add a slight hover effect */
+}
+
+.gallery img:hover {
+    transform: scale(1.05); /* Slightly enlarge image on hover */
+}
+
+/* Modal container - hidden by default */
+.modal {
+    display: none; /* Hidden initially */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it's above other content */
+}
+
+/* Full-size image in the modal */
+.modal img {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+/* Close button for the modal */
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    font-family: sans-serif;
+}
+
+/* Center box container for the index page */
+.center-box-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(42, 117, 182, 0.635);
+    padding: 2rem;
+}
+
+/* Center box for content on the index page */
+.center-box {
+    min-width: 40%;
+    max-width: 800px;
+    background-color: darkgrey;
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 3rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional shadow for better visual */
+}
+
+/* Prices Page - Modern Table and Layout */
+
+/* Main section styling */
+.main-container {
+    max-width: 800px;
+    margin: 1rem auto;
+    padding: 2rem;
+    background-color: #f9f9f9; /* Light background for the content */
+    border-radius: 8px; /* Soft rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    gap: 1.5rem; /* Add space between elements */
+}
+
+.main-container h2,
+.main-container p,
+.main-container table {
+    width: 100%; /* Ensure full width for all elements */
+}
+
+.main-container h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem; /* Spacing under heading */
+    text-align: center;
+    color: #333; /* Dark text color */
+}
+
+.main-container p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem; /* Space between paragraph and table */
+    line-height: 1.6;
+    text-align: center;
+    color: #555; /* Softer text color */
+}
+
+/* Modern table styling */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Remove gaps between table cells */
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    text-align: center;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden; /* Ensures border-radius applies to entire table */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds subtle shadow */
+}
+
+th, td {
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #42A5F5; /* Modern blue background for header */
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+td {
+    color: #333;
+}
+
+tr:hover td {
+    background-color: #f1f1f1; /* Light gray hover effect for rows */
+}
+
+td:last-child, th:last-child {
+    border-right: none; /* Remove right border for last column */
+}
+
+th:first-child, td:first-child {
+    text-align: left; /* Align the first column to the left */
+}
+
+tr:last-child td {
+    border-bottom: none; /* Remove border for last row */
+}
+
+/* Responsive behavior for smaller screens */
+@media (max-width: 768px) {
+    .main-container {
+        padding: 1rem;
+    }
+
+    table {
+        font-size: 0.9rem;
+    }
+
+    th, td {
+        padding: 0.8rem;
+    }
+}

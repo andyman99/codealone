@@ -4,73 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="gallery.css">
-    <title>Index</title>
+    <title>Gallery</title>
 </head>
 <body>
     <header>
-        <!--This should be replaced by an inclouded file to be able to update one file instead of changing all headers individually-->
         <div>
             <a href="#"><img src="https://www.svgrepo.com/show/508699/landscape-placeholder.svg" width="50px"></a>
             <h1>Dette er headeren</h1>
-        </div>        
-        <nav>
+        </div>
+
+        <!-- Hamburger menu for small screens -->
+        <div class="hamburger" id="hamburger">&#9776;</div>
+
+        <!-- Navigation menu -->
+        <nav id="navbar">
             <ul>
                 <li><a href="index.html">Hjem</a></li>
                 <li><a href="gallery.html" id="current-page">Galleri</a></li>
                 <li><a href="prices.html">Priser</a></li>
                 <li><a href="about.html">Om</a></li>
-                <li><a href="#">Kontakt</a></li>
+                <li><a href="contact.html">Kontakt</a></li>
             </ul>
         </nav>
     </header>
+
     <main>
         <div class="gallery-container">
             <section class="gatefoto">
                 <h2>Gatefoto</h2>
                 <section class="gallery">
-                    <!--This should auto update with latest imports from gallery, and not required going into code to change every time. This could also interact with external databse to incloude alt text and easy content management-->
-                    <img src="assets/img/low-quality/DSC00164.jpg" alt="placeholder" width="400px">
-                    <img src="assets/img/low-quality/DSC00178.jpg" alt="placeholder" width="400px">
-                    <img src="assets/img/low-quality/DSC00133.jpg" alt="placeholder" width="400px">
-                    <img src="assets/img/low-quality/DSC00253.jpg" alt="placeholder" width="400px">
-                    <img src="assets/img/low-quality/DSC00470.jpg" alt="placeholder" width="400px">
-                    <img src="assets/img/low-quality/DSC00295.jpg" alt="placeholder" width="400px">
-                    <img src="assets/img/low-quality/DSC00439.jpg" alt="placeholder" width="400px">
+                    <!-- Images for the gallery -->
+                    <img src="assets/img/low-quality/DSC00164.jpg" alt="placeholder">
+                    <img src="assets/img/low-quality/DSC00178.jpg" alt="placeholder">
+                    <img src="assets/img/low-quality/DSC00133.jpg" alt="placeholder">
+                    <img src="assets/img/low-quality/DSC00253.jpg" alt="placeholder">
+                    <img src="assets/img/low-quality/DSC00470.jpg" alt="placeholder">
+                    <img src="assets/img/low-quality/DSC00295.jpg" alt="placeholder">
+                    <img src="assets/img/low-quality/DSC00439.jpg" alt="placeholder">
                 </section>
-                <div class="modal" id="modal">
-                    <span class="modal-close" id="modal-close">&times;</span>
-                    <img id="modal-img" src="" alt="Full-size image">
-                </div>
             </section>
-            <section class="gatefoto">
-                <h2>Gatefoto</h2>
-                <section class="gallery">
-                    <!--This should auto update with latest imports from gallery, and not required going into code to change every time. This could also interact with external databse to incloude alt text and easy content management-->
-                    <img src="assets/img/low-quality/DSC00164.jpg" alt="placeholder" width="400px">
-                    <img src="assets/img/low-quality/DSC00178.jpg" alt="placeholder" width="400px">
-                    <img src="assets/img/low-quality/DSC00133.jpg" alt="placeholder" width="400px">
-                    <img src="assets/img/low-quality/DSC00253.jpg" alt="placeholder" width="400px">
-                    <img src="assets/img/low-quality/DSC00470.jpg" alt="placeholder" width="400px">
-                    <img src="assets/img/low-quality/DSC00295.jpg" alt="placeholder" width="400px">
-                    <img src="assets/img/low-quality/DSC00439.jpg" alt="placeholder" width="400px">
-                </section>
-                <div class="modal" id="modal">
-                    <span class="modal-close" id="modal-close">&times;</span>
-                    <img id="modal-img" src="" alt="Full-size image">
-                </div>
-            </section>
-            <script src="gallery.js"></script>
+
+            <!-- Modal for full-size images -->
+            <div class="modal" id="modal">
+                <span class="modal-close" id="modal-close">&times;</span>
+                <img id="modal-img" src="" alt="Full-size image">
+            </div>
         </div>
+
+        <!-- Script for gallery functionality -->
+        <script src="gallery.js"></script>
     </main>
+
     <footer>
-        <!--This should be replaced by an inclouded file to be able to update one file instead of changing all footers individually-->
         <h2>Andreas Heier</h2>
         <i>Gatefotograf</i>
         <a href="tel: +4746851716">+47 46851716</a>
         <p>
-            E-post:<a href="mailto: andreas.heier.1999@gmail.com">andreas.heier.1999@gmail.com</a>
+            E-post: <a href="mailto:andreas.heier.1999@gmail.com">andreas.heier.1999@gmail.com</a>
         </p>
     </footer>
+
+    <!-- JavaScript for toggling the hamburger menu -->
+    <script src="main.js"></script>
 </body>
 </html>

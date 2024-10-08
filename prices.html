@@ -4,29 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css">
-    <title>Hjem</title>
+    <title>Priser</title>
 </head>
 <body>
     <header>
-        <!--This should be replaced by an inclouded file to be able to update one file instead of changing all headers individually-->
+        <!--This should be replaced by an included file to update all headers centrally-->
         <div>
             <a href="#"><img src="https://www.svgrepo.com/show/508699/landscape-placeholder.svg" width="50px"></a>
             <h1>Dette er headeren</h1>
         </div>
-        <nav>
+
+        <!-- Hamburger menu for small screens -->
+        <div class="hamburger" id="hamburger">&#9776;</div>
+
+        <!-- Navigation menu -->
+        <nav id="navbar">
             <ul>
-                <!--id="current-page" meant to be used to highlight which page youre on. This might be removed with help from AI and JS in later development-->
+                <!-- id="current-page" marks the current page (can later be handled dynamically) -->
                 <li><a href="index.html">Hjem</a></li>
-                <li><a href="gallery.html" id="current-page">Galleri</a></li>
-                <li><a href="prices.html">Priser</a></li>
+                <li><a href="gallery.html">Galleri</a></li>
+                <li><a href="prices.html" id="current-page">Priser</a></li>
                 <li><a href="about.html">Om</a></li>
                 <li><a href="contact.html">Kontakt</a></li>
             </ul>
         </nav>
     </header>
+
     <main class="main-container">
         <h2>Priser</h2>
         <p>Veiledende priser for bilder er vist her. Bildene kan bli funnet i galleriet, og bestillt på ønskt materiale. Disse prisene er veiledende, og andre størrelser kan bli etterspurt dersom ønskt.</p>
+
         <table>
             <tr>
                 <th>Størrelser</th>
@@ -66,14 +73,17 @@
             </tr>
         </table>
     </main>
+
     <footer>
-        <!--This should auto update with latest imports from gallery, and not required going into code to change every time-->
         <h2>Andreas Heier</h2>
         <i>Gatefotograf</i>
-        <a href="tel: +4746851716">+47 46851716</a>
+        <a href="tel:+4746851716">+47 46851716</a>
         <p>
-            E-post:<a href="mailto: andreas.heier.1999@gmail.com">andreas.heier.1999@gmail.com</a>
+            E-post: <a href="mailto:andreas.heier.1999@gmail.com">andreas.heier.1999@gmail.com</a>
         </p>
     </footer>
+
+    <!-- JavaScript for toggling the hamburger menu -->
+    <script src="main.js"></script>
 </body>
 </html>
