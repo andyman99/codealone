@@ -1,24 +1,21 @@
-/* Old code. New developed from ChatGPT used instead
-.container{
-    display: flex;
-    margin-inline: 15vw;
-    padding: 1rem;
-    background-color: rgba(255, 255, 255, 0.836);
+.gallery-container{
+    width: 70%;
+    margin-inline: auto;
 }
-*/
 
 /* Main gallery container */
 .gallery {
     display: flex;
+    margin-inline: 3rem;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1rem; /* Spacing between thumbnails */
+    gap: .5rem; /* Spacing between thumbnails */
     margin: 2rem auto;
 }
 
 /* Style for images to maintain 1x1 aspect ratio */
 .gallery img {
-    width: 200px; /* Set a width for the thumbnail */
+    width: 20rem; /* Set a width for the thumbnail */
     aspect-ratio: 1/1; /* Force the image to be a square */
     object-fit: cover; /* Ensure the image covers the square without stretching */
     cursor: pointer; /* Change cursor to indicate it's clickable */
