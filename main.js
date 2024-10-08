@@ -34,3 +34,27 @@ function highlightCurrentPage() {
         }
     });
 }
+
+// EmailJS initialization
+(function() {
+    emailjs.init("7dO-EDCQAxfoWWNDb"); // Add your public key from EmailJS here
+})();
+
+// Handle contact form submission
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contact-form');
+
+    if (form) {
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Send form data using EmailJS
+            emailjs.sendForm('service_fvqgtu4', 'template_3sd7s7t', this)
+                .then(function() {
+                    document.getElementById('status').innerText = "Meldingen er sendt!";
+                }, function(error) {
+                    document.getElementById('status').innerText = "Noe gikk galt, prøv igjen.";
+                });
+        });
+    }
+});
