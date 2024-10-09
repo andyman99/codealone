@@ -6,7 +6,8 @@
 
     /*Custom properties*/
     --general-font-size: 1.1rem;
-    --general-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-family-general: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-family-hx:'Courier New', Courier, monospace;
     
     --font-color-main: black;
     --font-color-secondary:white;
@@ -20,12 +21,10 @@
 
     --shadows:0 4px 10px rgba(13, 11, 11, 0.1);
 }
-h1 {
-    font-family: 'Courier New', Courier, monospace; /* Same font as before */
-}
+
 /* Body and Layout */
 body {
-    font-family: var(--general-font-family);
+    font-family: var(--font-family-general);
     background-color: var(--background-main);
     display: flex;
     flex-direction: column;
@@ -33,8 +32,13 @@ body {
 }
 
 /*Text styling*/
-h2 {
+h1 {
     font-size: 2rem;
+    font-family: var(--font-family-hx); /* Same font as before */
+}
+h2 {
+    font-size: 1.7rem;
+    font-family: var(--font-family-hx);
 }
 p {
     font-size: var(--general-font-size);
