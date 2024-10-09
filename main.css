@@ -301,3 +301,21 @@ tr:last-child td {
         padding: 0.8rem;
     }
 }
+/* Make the entire header clickable */
+.clickable-header a {
+    display: flex;
+    align-items: center; /* Center logo and heading vertically */
+    text-decoration: none; /* Remove underline from heading */
+    color: inherit; /* Keep text color */
+    width: 100%; /* Make the whole area clickable */
+}
+
+.clickable-header img {
+    margin-right: 1rem; /* Space between logo and heading */
+}
+
+.clickable-header h1 {
+    margin: 0; /* Ensure no extra margins */
+    font-size: 2rem; /* Adjust font size as needed */
+    font-family: 'Courier New', Courier, monospace; /* Same font as before */
+}
