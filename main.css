@@ -3,20 +3,54 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
 
+    /*Custom properties*/
+    --general-font-size: 1.1rem;
+    --general-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    --font-color-main: black;
+    --font-color-secondary:white;
+    --font-color-special:whitesmoke;
+
+    --background-main:darkgray;
+    --background-header:rgb(239, 239, 239);
+    --background-footer:rgb(181, 208, 217);
+    --background-secondary:#f9f9f9;
+    --background-special:rgb(92, 141, 183); /*center-box on index bg color*/
+
+    --shadows:0 4px 10px rgba(13, 11, 11, 0.1);
+}
+h1 {
+    font-family: 'Courier New', Courier, monospace; /* Same font as before */
+}
 /* Body and Layout */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: darkgray;
+    font-family: var(--general-font-family);
+    background-color: var(--background-main);
     display: flex;
     flex-direction: column;
     min-height: 100vh; /* Ensures the page always fills the viewport height */
 }
 
+/*Text styling*/
+h2 {
+    font-size: 2rem;
+}
+p {
+    font-size: var(--general-font-size);
+    margin-bottom: 1rem; /* Space between paragraph and table */
+    line-height: 1.6;
+    text-align: center;
+    color: inherit; /* Softer text color */
+}
+a{
+    color: inherit;
+    font-size: var(--general-font-size);
+}
+
 /* Header styles */
 header {
-    background-color: rgba(255, 255, 255, 0.806);
+    background-color: var(--background-header);
     min-height: 10rem;
     display: flex;
     justify-content: space-between;
@@ -25,12 +59,15 @@ header {
     flex-wrap: wrap;
 }
 
-/* Left section (logo and title) */
-header div {
+/* Make the entire header clickable */
+header a {
     display: flex;
-    gap: 1rem;
-    align-items: center;
+    align-items: center; /* Center logo and heading vertically */
 }
+
+header img {
+    margin-right: 1rem; /* Space between logo and heading */
+} 
 
 /* Style for the current page in the navbar */
 #navbar a#current-page {
@@ -38,11 +75,10 @@ header div {
     font-weight: bold;          /* Optionally, make it bold */
 }
 
-
-/* Hamburger menu */
+/* Hamburger menu - Rest placed in media query in the end of file */
 .hamburger {
     display: none;
-    font-size: 2rem;
+    font-size: 2rem; /*affects the menu icon*/
     cursor: pointer;
 }
 
@@ -53,61 +89,18 @@ nav ul {
     list-style: none;
 }
 
-nav a {
-    color: black;
-    text-decoration: none;
-}
-
-@media (max-width: 768px) {
-    /* Stack header contents vertically on small screens */
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    nav {
-        display: none; /* Hide the navigation by default */
-        position: absolute;
-        top: 10rem;
-        left: 0;
-        width: 100%;
-        background-color: rgba(255, 255, 255, 0.95);
-        overflow: hidden;
-        max-height: 0;
-        transition: max-height 0.3s ease-out;
-    }
-
-    nav.active {
-        max-height: 300px;
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    nav ul {
-        flex-direction: column;
-        gap: 1rem;
-        padding: 1rem;
-    }
-
-    .hamburger {
-        display: block;
-    }
-}
-
 /* Main content */
 main {
     flex-grow: 1; /* Fills the remaining space between header and footer */
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2rem;
-    min-height: calc(100vh - 10rem - 15rem); /* Adjusts based on header and footer height */
 }
 
 /* Footer styling */
 footer {
-    background-color: rgba(173, 216, 230, 0.356);
+    background-color: var(--background-footer);
+    gap: .5rem;
     height: 15rem;
     padding: 1rem;
     text-align: center;
@@ -123,7 +116,8 @@ footer {
 
 /* Gallery styles */
 .gallery-container {
-    width: 70%;
+    width: 100%;
+    padding: 3rem;
     margin-inline: auto;
 }
 
@@ -149,7 +143,7 @@ footer {
     transform: scale(1.05); /* Slightly enlarge image on hover */
 }
 
-/* Modal container - hidden by default */
+/* Modal container - hidden by default - Container for pop-up in gallery */
 .modal {
     display: none; /* Hidden initially */
     position: fixed;
@@ -174,7 +168,7 @@ footer {
     position: absolute;
     top: 20px;
     right: 40px;
-    font-size: 2rem;
+    font-size: 3rem;
     color: white;
     cursor: pointer;
     font-family: sans-serif;
@@ -182,76 +176,50 @@ footer {
 
 /* Center box container for the index page */
 .center-box-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: rgba(42, 117, 182, 0.635);
-    padding: 2rem;
+    background-color: var(--background-special);
 }
 
 /* Center box for content on the index page */
 .center-box {
     min-width: 40%;
     max-width: 800px;
-    background-color: darkgrey;
-    color: whitesmoke;
+    background-color: var(--background-main);
+    color: var(--font-color-special);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 1rem;
     padding: 3rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional shadow for better visual */
+    box-shadow: var(--shadows); /* Optional shadow for better visual */
 }
 
-/* Prices Page - Modern Table and Layout */
 
 /* Main section styling */
-.main-container {
+.small-container {
     max-width: 800px;
     margin-inline: auto; /* Ensure at least 1rem, but prefer auto for wider screens */
     margin-block: 1rem; /* Keep a consistent 1rem margin at the top and bottom */
     padding: 2rem;
-    background-color: #f9f9f9; /* Light background for the content */
+    background-color: var(--background-secondary); /* Light background for the content */
     border-radius: 8px; /* Soft rounded corners */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    box-shadow: var(--shadows); /* Subtle shadow for depth */
     display: flex;
     flex-direction: column; /* Stack content vertically */
     gap: 1.5rem; /* Add space between elements */
 }
 
-.main-container h2,
-.main-container p,
-.main-container table {
-    width: 100%; /* Ensure full width for all elements */
-}
 
-.main-container h2 {
-    font-size: 2rem;
-    margin-bottom: 0.5rem; /* Spacing under heading */
-    text-align: center;
-    color: #333; /* Dark text color */
-}
 
-.main-container p {
-    font-size: 1.1rem;
-    margin-bottom: 1rem; /* Space between paragraph and table */
-    line-height: 1.6;
-    text-align: center;
-    color: #555; /* Softer text color */
-}
-
+/* Prices Page - Modern Table and Layout */
 /* Modern table styling */
 table {
     width: 100%;
     border-collapse: collapse; /* Remove gaps between table cells */
-    margin-bottom: 2rem;
-    font-size: 1rem;
     text-align: center;
-    background-color: white;
     border-radius: 8px;
     overflow: hidden; /* Ensures border-radius applies to entire table */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds subtle shadow */
+    box-shadow: var(--shadows); /* Adds subtle shadow */
 }
 
 th, td {
@@ -260,15 +228,10 @@ th, td {
 }
 
 th {
-    background-color: #42A5F5; /* Modern blue background for header */
-    color: white;
+    background-color: var(--background-special); /* Modern blue background for header */
+    color: var(--font-color-special);
     font-weight: bold;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
-
-td {
-    color: #333;
 }
 
 tr:hover td {
@@ -287,35 +250,37 @@ tr:last-child td {
     border-bottom: none; /* Remove border for last row */
 }
 
-/* Responsive behavior for smaller screens */
+
+
 @media (max-width: 768px) {
-    .main-container {
+    /* Hide navigation by default on small screens */
+    nav {
+        display: none;
+    }
+
+    /* Stack header contents vertically on small screens */
+    nav ul {
+        flex-direction: column;
+        gap: 1rem;
         padding: 1rem;
     }
 
-    table {
-        font-size: 0.9rem;
+    /* Show navigation when active (after clicking the hamburger) */
+    nav.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 10rem;
+        right: 0;
+        width: 100%;
+        background-color: inherit;
     }
 
-    th, td {
-        padding: 0.8rem;
+    .hamburger {
+        display: block;
+        position: absolute;
+        right: 2rem; /* Position hamburger on the right side of the screen */
+        top: 1.5rem; /* Adjust vertical positioning */
     }
 }
-/* Make the entire header clickable */
-.clickable-header a {
-    display: flex;
-    align-items: center; /* Center logo and heading vertically */
-    text-decoration: none; /* Remove underline from heading */
-    color: inherit; /* Keep text color */
-    width: 100%; /* Make the whole area clickable */
-}
 
-.clickable-header img {
-    margin-right: 1rem; /* Space between logo and heading */
-}
-
-.clickable-header h1 {
-    margin: 0; /* Ensure no extra margins */
-    font-size: 2rem; /* Adjust font size as needed */
-    font-family: 'Courier New', Courier, monospace; /* Same font as before */
-}
